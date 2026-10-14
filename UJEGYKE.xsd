@@ -1,0 +1,2732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:baseForm="https://soap.api.nav.gov.hu/definitions/model/2.0/baseForm/1.0"
+        xmlns:meta="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+        xmlns:tns="https://soap.api.nav.gov.hu/definitions/model/2.0/UJEGYKE/13.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        targetNamespace="https://soap.api.nav.gov.hu/definitions/model/2.0/UJEGYKE/13.0">
+   <import namespace="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+           schemaLocation="form_xsd_metaschema.xsd"/>
+   <import namespace="https://soap.api.nav.gov.hu/definitions/model/2.0/baseForm/1.0"
+           schemaLocation="baseForm.xsd"/>
+   <element name="Doc_UJEGYKE"
+            type="tns:Doc_UJEGYKE_Type"
+            meta:metaType="DocMetaType">
+      <annotation>
+         <documentation>Egységes képviseleti adatlap a NAV-nál intézhető ügyekben az állandó képviselet bejelentéséhez</documentation>
+      </annotation>
+      <xs:unique name="uniqueFileId_Attachment_1">
+         <xs:selector xpath="Form_UJEGYKE/Attachment_1"/>
+         <xs:field xpath="fileId"/>
+      </xs:unique>
+      <xs:unique name="uniqueFileId_Attachment_2">
+         <xs:selector xpath="Form_UJEGYKE/Attachment_2"/>
+         <xs:field xpath="fileId"/>
+      </xs:unique>
+   </element>
+   <complexType name="Doc_UJEGYKE_Type">
+      <annotation>
+         <documentation>A teljes bizonylat szerkezetet leíró típus</documentation>
+      </annotation>
+      <sequence>
+         <element name="Form_UJEGYKE"
+                  type="tns:Form_UJEGYKE_Type"
+                  minOccurs="1"
+                  maxOccurs="1"
+                  meta:metaType="FormMetaType">
+            <annotation>
+               <documentation>UJEGYKE részbizonylat</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Form_UJEGYKE_Type">
+      <annotation>
+         <documentation>A teljes nyomtatvány UJEGYKE részbiztonylatának szerkezetét leíró típus.</documentation>
+      </annotation>
+      <sequence>
+         <element name="Block_120001"
+                  type="tns:Block_UJEGYKE_120001_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Azonosító adatok</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120013"
+                  type="tns:Block_UJEGYKE_120013_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Képviseleti jogosultság időbeli hatálya, csatolmányok, elérhetőség</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120148"
+                  type="tns:Block_UJEGYKE_120148_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Fő ügycsoportok</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120022"
+                  type="tns:Block_UJEGYKE_120022_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Ügycsoportok részletezése</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120084"
+                  type="tns:Block_UJEGYKE_120084_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Együttes képviselet</documentation>
+            </annotation>
+         </element>
+         <element name="Attachment_1"
+                  type="baseForm:AttachmentType"
+                  minOccurs="0"
+                  maxOccurs="10"
+                  meta:metaType="AttachmentMetaType">
+            <annotation>
+               <documentation>UJEGYKE; File Extensions:PDF;ODT;ODS;ZIP</documentation>
+            </annotation>
+         </element>
+         <element name="Attachment_2"
+                  type="baseForm:AttachmentType"
+                  minOccurs="0"
+                  maxOccurs="10"
+                  meta:metaType="AttachmentMetaType">
+            <annotation>
+               <documentation>UJEGYKE_minden; File Extensions:DOC;RTF;PDF;TXT;ODT;XLS;ODS;ZIP;RAR;ARJ;ACE;GZIP;TAR;CAB;BMP;JPG;JPEG;GIF;TIF;PNG;XML</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120001_Type">
+      <annotation>
+         <documentation>Azonosító adatok</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120002"
+                  type="tns:FieldGroup_UJEGYKE_120002_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation/>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120013_Type">
+      <annotation>
+         <documentation>Képviseleti jogosultság időbeli hatálya, csatolmányok, elérhetőség</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120014"
+                  type="tns:FieldGroup_UJEGYKE_120014_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Képviseleti jogosultság</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120017"
+                  type="tns:FieldGroup_UJEGYKE_120017_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Csatolmány</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120019"
+                  type="tns:FieldGroup_UJEGYKE_120019_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Bejelentő</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120148_Type">
+      <annotation>
+         <documentation>Fő ügycsoportok</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120149"
+                  type="tns:FieldGroup_UJEGYKE_120149_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation/>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120022_Type">
+      <annotation>
+         <documentation>Ügycsoportok részletezése</documentation>
+      </annotation>
+      <all>
+         <element name="Block_120107"
+                  type="tns:Block_UJEGYKE_120107_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Egyes adóügyek (kivéve egyes jövedéki ügyek)</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120059"
+                  type="tns:Block_UJEGYKE_120059_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Egyes jövedéki ügyek</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120128"
+                  type="tns:Block_UJEGYKE_120128_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Egyes vámügyek</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120138"
+                  type="tns:Block_UJEGYKE_120138_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Egyes fizetési kedvezményi és végrehajtási ügyek</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120077"
+                  type="tns:Block_UJEGYKE_120077_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Vegyes ügyek</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120107_Type">
+      <annotation>
+         <documentation>Egyes adóügyek (kivéve egyes jövedéki ügyek)</documentation>
+      </annotation>
+      <all>
+         <element name="Block_120108"
+                  type="tns:Block_UJEGYKE_120108_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Áfához és egyéb közvetett adókhoz kapcsolódó ügyek</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120111"
+                  type="tns:Block_UJEGYKE_120111_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Jövedelem típusú és egyéb közvetlen adókhoz kapcsolódó ügyek</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120112"
+                  type="tns:Block_UJEGYKE_120112_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Foglalkoztatással kapcsolatos ügyek (bejelentések, járulékbevallások)</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120115"
+                  type="tns:Block_UJEGYKE_120115_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Ellenőrzési ügyek</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120116"
+                  type="tns:Block_UJEGYKE_120116_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Adószámla ügyek</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120113"
+                  type="tns:Block_UJEGYKE_120113_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Egyéb adóügyek</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120108_Type">
+      <annotation>
+         <documentation>Áfához és egyéb közvetett adókhoz kapcsolódó ügyek</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120026"
+                  type="tns:FieldGroup_UJEGYKE_120026_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Valamennyi, áfához és egyéb közvetett adókhoz kapcsolódó ügy</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120033"
+                  type="tns:FieldGroup_UJEGYKE_120033_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Egyes, áfához és egyéb közvetett adókhoz kapcsolódó ügyek</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120111_Type">
+      <annotation>
+         <documentation>Jövedelem típusú és egyéb közvetlen adókhoz kapcsolódó ügyek</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120034"
+                  type="tns:FieldGroup_UJEGYKE_120034_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Jövedelem típusú és egyéb közvetlen adókhoz kapcsolódó ügyek</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120112_Type">
+      <annotation>
+         <documentation>Foglalkoztatással kapcsolatos ügyek (bejelentések, járulékbevallások)</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120036"
+                  type="tns:FieldGroup_UJEGYKE_120036_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Valamennyi, foglalkoztatással kapcsolatos ügy (bejelentések, járulékbevallások)</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120038"
+                  type="tns:FieldGroup_UJEGYKE_120038_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Egyes, foglalkoztatással kapcsolatos ügyek (bejelentések, járulékbevallások)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120115_Type">
+      <annotation>
+         <documentation>Ellenőrzési ügyek</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120044"
+                  type="tns:FieldGroup_UJEGYKE_120044_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Valamennyi ellenőrzési ügy</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120047"
+                  type="tns:FieldGroup_UJEGYKE_120047_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Egyes ellenőrzési ügyek</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120116_Type">
+      <annotation>
+         <documentation>Adószámla ügyek</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120048"
+                  type="tns:FieldGroup_UJEGYKE_120048_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Valamennyi adószámlaügy</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120049"
+                  type="tns:FieldGroup_UJEGYKE_120049_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Egyes adószámlaügyek</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120113_Type">
+      <annotation>
+         <documentation>Egyéb adóügyek</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120040"
+                  type="tns:FieldGroup_UJEGYKE_120040_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Egyéb adóügyek</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120059_Type">
+      <annotation>
+         <documentation>Egyes jövedéki ügyek</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120061"
+                  type="tns:FieldGroup_UJEGYKE_120061_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation/>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120128_Type">
+      <annotation>
+         <documentation>Egyes vámügyek</documentation>
+      </annotation>
+      <all>
+         <element name="Block_120130"
+                  type="tns:Block_UJEGYKE_120130_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Alapeljárás közvetett vámjogi képviselőként</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120131"
+                  type="tns:Block_UJEGYKE_120131_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Alapeljárás közvetlen vámjogi képviselőként</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120129"
+                  type="tns:Block_UJEGYKE_120129_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Egyéb vámügyek</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120130_Type">
+      <annotation>
+         <documentation>Alapeljárás közvetett vámjogi képviselőként</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120065"
+                  type="tns:FieldGroup_UJEGYKE_120065_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Valamennyi alapeljárás közvetett vámjogi képviselőként</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120066"
+                  type="tns:FieldGroup_UJEGYKE_120066_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Egyes alapeljárások közvetett vámjogi képviselőként</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120131_Type">
+      <annotation>
+         <documentation>Alapeljárás közvetlen vámjogi képviselőként</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120067"
+                  type="tns:FieldGroup_UJEGYKE_120067_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Valamennyi alapeljárás közvetlen vámjogi képviselőként</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120068"
+                  type="tns:FieldGroup_UJEGYKE_120068_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Egyes alapeljárások közvetlen vámjogi képviselőként</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120129_Type">
+      <annotation>
+         <documentation>Egyéb vámügyek</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120064"
+                  type="tns:FieldGroup_UJEGYKE_120064_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Egyéb vámügyek</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120138_Type">
+      <annotation>
+         <documentation>Egyes fizetési kedvezményi és végrehajtási ügyek</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120074"
+                  type="tns:FieldGroup_UJEGYKE_120074_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation/>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120077_Type">
+      <annotation>
+         <documentation>Vegyes ügyek</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120078"
+                  type="tns:FieldGroup_UJEGYKE_120078_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation/>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_UJEGYKE_120084_Type">
+      <annotation>
+         <documentation>Együttes képviselet</documentation>
+      </annotation>
+      <all>
+         <element name="Chain_120085"
+                  type="tns:Chain_UJEGYKE_120085_Type"
+                  minOccurs="0"
+                  meta:metaType="ChainMetaType">
+            <annotation>
+               <documentation>Együttes képviselő</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Chain_UJEGYKE_120085_Type">
+      <annotation>
+         <documentation>Együttes képviselő</documentation>
+      </annotation>
+      <sequence>
+         <element name="Chain_elem" minOccurs="0" maxOccurs="99">
+            <annotation>
+               <documentation>Lánc ismétlődő elemei</documentation>
+            </annotation>
+            <complexType>
+               <sequence>
+                  <element name="FieldGroup_120086"
+                           type="tns:FieldGroup_UJEGYKE_120086_Type"
+                           minOccurs="1"
+                           meta:metaType="FieldGroupMetaType">
+                     <annotation>
+                        <documentation>Együttes képviselő</documentation>
+                     </annotation>
+                  </element>
+               </sequence>
+            </complexType>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120002_Type">
+      <annotation>
+         <documentation/>
+      </annotation>
+      <all>
+         <element name="Field_0A0001E001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselő ¦ Magánszemély ¦ Neve (Folap_A_1_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E002A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselő ¦ Magánszemély ¦ Adóazonosító jele (Folap_A_2_adoazonosito)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E011A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselő ¦ Szervezet ¦ Elnevezése (Folap_A_5_szervezet_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E012A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselő ¦ Szervezet ¦ Adószáma (Folap_A_6_szervezet_ados)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E013A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselő ¦ Szervezet ¦ EORI-száma (Folap_A_7_eori)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="17"/>
+                  <pattern value="[A-Z0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E014A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselő ¦ Szervezet ¦ Magyarországon kiadott adószáma nem ismert (Folap_A_8_szervezet_nincs_cim)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E005A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselet ¦ Elsődleges jogcíme ¦ Kód (Folap_A_3_jogcim_kod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="2"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ (Folap_A_3_jogi_jogcim_kod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="1"/>
+                  <pattern value="[A-Z]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ (Folap_A_3_torvenyes_jogcim_kod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="1"/>
+                  <pattern value="[A-Z]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E00503A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ (Folap_A_3_ceges_meghatalmazas)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="1"/>
+                  <pattern value="[A-Z]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E00500A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ (Folap_A_bejelentes_tipusa)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="30"/>
+                  <pattern value="[\t\n\r\P{C}]*[^\s][\t\n\r\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E00501A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ (Folap_A_bejelentes_fajtaja)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="30"/>
+                  <pattern value="[\t\n\r\P{C}]*[^\s][\t\n\r\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E006A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ Képviselet ¦ Elsődleges jogcíme ¦ Megnevezés (Folap_A_3_jogcim_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E007A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselet ¦ Elsődleges jogcíme ¦ Nyilvántartási szám (Folap_A_3_jogcim_nyilvan_sz)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E008A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselet ¦ Másodlagos jogcíme ¦ Kód (Folap_A_4_jogcim_kod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="2"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E009A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ Képviselet ¦ Másodlagos jogcíme ¦ Megnevezés (Folap_A_4_jogcim_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E010A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselet ¦ Másodlagos jogcíme ¦ Nyilvántartási szám (Folap_A_4_jogcim_nyilvan_sz)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselt ¦ Neve (Folap_B_1_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselt ¦ Adóazonosító jele (Folap_B_3_adoazonosito)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F002A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselt ¦ Adószáma, csoportazonosító száma (Folap_B_2_adoszam)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviselt ¦ EORI-száma (Folap_B_4_eori)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="17"/>
+                  <pattern value="[A-Z0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120014_Type">
+      <annotation>
+         <documentation>Képviseleti jogosultság</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001G001A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>megszűnését jelentem be (Folap_C_1_jogosultsag_megszun)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001G002A"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviseleti jogosultság kezdete (Folap_C_2_jogosultsag_kezdet)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001G003A"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képviseleti jogosultság vége (Folap_C_3_jogosultsag_veg)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120017_Type">
+      <annotation>
+         <documentation>Csatolmány</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001I002A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>mellékletet csatolok (Folap_alairas_csatolmany)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120019_Type">
+      <annotation>
+         <documentation>Bejelentő</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001I005A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Neve (Folap_alairas_bejelento_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001I006A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adóazonosító jele (Folap_alairas_bejelento_adoazo)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001I007A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Elérhetősége (Folap_alairas_bejelento_elerhe)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120149_Type">
+      <annotation>
+         <documentation/>
+      </annotation>
+      <all>
+         <element name="Field_0A0001H0001AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>ADÓÜGYEK (kivéve egyes jövedéki ügyek) ¦ Ügycsoport intézésére jogosult ([Folap]A1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001H0001BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>ADÓÜGYEK (kivéve egyes jövedéki ügyek) ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([Folap]B1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001H0002AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>JÖVEDÉKI ÜGYEK ¦ Ügycsoport intézésére jogosult ([Folap]A2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001H0002BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>JÖVEDÉKI ÜGYEK ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([Folap]B2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001H0003AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>VÁMÜGYEK ¦ Ügycsoport intézésére jogosult ([Folap]A3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001H0003BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>VÁMÜGYEK ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([Folap]B3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001H0004AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>FIZETÉSI KEDVEZMÉNYI ÉS VÉGREHAJTÁSI ÜGYEK ¦ Ügycsoport intézésére jogosult ([Folap]A4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001H0004BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>FIZETÉSI KEDVEZMÉNYI ÉS VÉGREHAJTÁSI ÜGYEK ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([Folap]B4)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120026_Type">
+      <annotation>
+         <documentation>Valamennyi, áfához és egyéb közvetett adókhoz kapcsolódó ügy</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001C0001AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ügycsoport intézésére jogosult ([1]A1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0001BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B1)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120033_Type">
+      <annotation>
+         <documentation>Egyes, áfához és egyéb közvetett adókhoz kapcsolódó ügyek</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001C0002AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Áfához és egyéb közvetett adókhoz kapcsolódó ügyek (külföldi adóalany áfa-visszatérítési jogának érvényesítésével kapcsolatos és OSS-, IOSS-, SA-ügyek kivételével) ¦ Ügycsoport intézésére jogosult ([1]A2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0002BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Áfához és egyéb közvetett adókhoz kapcsolódó ügyek (külföldi adóalany áfa-visszatérítési jogának érvényesítésével kapcsolatos és OSS-, IOSS-, SA-ügyek kivételével) ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0003AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Külföldi adóalany áfa-visszatérítési jogának érvényesítésével kapcsolatos ügyek ¦ Ügycsoport intézésére jogosult ([1]A3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0003BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Külföldi adóalany áfa-visszatérítési jogának érvényesítésével kapcsolatos ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0004AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Az Áfa tv. XIX/A. Fejezete (OSS) alá tartozó ügyletekhez kapcsolódó áfaügyek ¦ Ügycsoport intézésére jogosult ([1]A4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0004BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Az Áfa tv. XIX/A. Fejezete (OSS) alá tartozó ügyletekhez kapcsolódó áfaügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0005AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Az Áfa tv. XIX/B. Fejezete (IOSS) alá tartozó ügyletekhez kapcsolódó áfaügyek ¦ Ügycsoport intézésére jogosult ([1]A5)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0005BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Az Áfa tv. XIX/B. Fejezete (IOSS) alá tartozó ügyletekhez kapcsolódó áfaügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B5)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0006AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Az Áfa tv. XIX/C. Fejezete (SA) alá tartozó ügyletekhez kapcsolódó áfaügyek ¦ Ügycsoport intézésére jogosult ([1]A6)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0006BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Az Áfa tv. XIX/C. Fejezete (SA) alá tartozó ügyletekhez kapcsolódó áfaügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B6)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C50000A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Belföldön letelepedett adóalanyok külföldi áfa-visszatérítési jogának érvényesítésével kapcsolatos ügyek ¦ Ügycsoport intézésére jogosult ([1]A29)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C50001A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Belföldön letelepedett adóalanyok külföldi áfa-visszatérítési jogának érvényesítésével kapcsolatos ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B29)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120034_Type">
+      <annotation>
+         <documentation>Jövedelem típusú és egyéb közvetlen adókhoz kapcsolódó ügyek</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001C0007AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ügycsoport intézésére jogosult ([1]A7)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0007BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B7)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120036_Type">
+      <annotation>
+         <documentation>Valamennyi, foglalkoztatással kapcsolatos ügy (bejelentések, járulékbevallások)</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001C0008AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ügycsoport intézésére jogosult ([1]A8)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0008BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B8)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120038_Type">
+      <annotation>
+         <documentation>Egyes, foglalkoztatással kapcsolatos ügyek (bejelentések, járulékbevallások)</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001C0009AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Járulékbevallással kapcsolatos ügyek ¦ Ügycsoport intézésére jogosult ([1]A9)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0009BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Járulékbevallással kapcsolatos ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B9)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0010AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Foglalkoztatói bejelentésekkel kapcsolatos ügyek ¦ Ügycsoport intézésére jogosult ([1]A10)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0010BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Foglalkoztatói bejelentésekkel kapcsolatos ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B10)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120044_Type">
+      <annotation>
+         <documentation>Valamennyi ellenőrzési ügy</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001C0013AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ügycsoport intézésére jogosult ([1]A13)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0013BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B13)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120047_Type">
+      <annotation>
+         <documentation>Egyes ellenőrzési ügyek</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001C0014AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adókötelezettség teljesítésére irányuló ellenőrzési ügyek (a jövedéki és a termékdíj-ellenőrzések kivétel) ¦ Ügycsoport intézésére jogosult ([1]A14)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0014BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adókötelezettség teljesítésére irányuló ellenőrzési ügyek (a jövedéki és a termékdíj-ellenőrzések kivétel) ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B14)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0015AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedéki adóellenőrzések ¦ Ügycsoport intézésére jogosult ([1]A15)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0015BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedéki adóellenőrzések ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B15)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0016AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Környezetvédelmi termékdíjjal kapcsolatos ellenőrzések ¦ Ügycsoport intézésére jogosult ([1]A16)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0016BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Környezetvédelmi termékdíjjal kapcsolatos ellenőrzések ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B16)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120048_Type">
+      <annotation>
+         <documentation>Valamennyi adószámlaügy</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001C0017AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ügycsoport intézésére jogosult ([1]A17)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0017BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B17)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120049_Type">
+      <annotation>
+         <documentation>Egyes adószámlaügyek</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001C0018AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adószámla-rendezéssel kapcsolatos ügyek ¦ Ügycsoport intézésére jogosult ([1]A18)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0018BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adószámla-rendezéssel kapcsolatos ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B18)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0019AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adószámla lekérdezése ¦ Ügycsoport intézésére jogosult ([1]A19)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0019BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adószámla lekérdezése ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B19)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120040_Type">
+      <annotation>
+         <documentation>Egyéb adóügyek</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001C0011AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adózói adat- és változásbejelentéssel, adóazonosító számmal kapcsolatos ügyek ¦ Ügycsoport intézésére jogosult ([1]A11)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0011BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adózói adat- és változásbejelentéssel, adóazonosító számmal kapcsolatos ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B11)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0012AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adózói minőséggel kapcsolatos ügyek (minősítés, adóteljesítmény, köztartozás-mentesség) ¦ Ügycsoport intézésére jogosult ([1]A12)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0012BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adózói minőséggel kapcsolatos ügyek (minősítés, adóteljesítmény, köztartozás-mentesség) ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B12)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0020AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adóhatósági igazolások ¦ Ügycsoport intézésére jogosult ([1]A20)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0020BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adóhatósági igazolások ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B20)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0021AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ ([1]A21)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0021BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ ([1]B21)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0022AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Illetékügyek ¦ Ügycsoport intézésére jogosult ([1]A22)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0022BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Illetékügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B22)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0023AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Belföldi gépjárművek adójával kapcsolatos ügyek (cégautóadó és külföldi gépjárművek adója nélkül) ¦ Ügycsoport intézésére jogosult ([1]A23)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0023BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Belföldi gépjárművek adójával kapcsolatos ügyek (cégautóadó és külföldi gépjárművek adója nélkül) ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B23)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0024AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Termékdíjügyek ¦ Ügycsoport intézésére jogosult ([1]A24)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0024BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Termékdíjügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B24)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0025AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Regisztrációs adóhoz kapcsolódó ügyek ¦ Ügycsoport intézésére jogosult ([1]A25)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0025BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Regisztrációs adóhoz kapcsolódó ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B25)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0026AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adóraktározási eljárással kapcsolatos ügyek (Áfa tv. 4. számú melléklete) ¦ Ügycsoport intézésére jogosult ([1]A26)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0026BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adóraktározási eljárással kapcsolatos ügyek (Áfa tv. 4. számú melléklete) ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B26)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0027AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>1%-os ügyek ¦ Ügycsoport intézésére jogosult ([1]A27)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0027BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>1%-os ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B27)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0028AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Elhunytak utáni adómegállapítás és egyéb, soron kívüli adómegállapítási ügyek ¦ Ügycsoport intézésére jogosult ([1]A28)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0B0001C0028BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Elhunytak utáni adómegállapítás és egyéb, soron kívüli adómegállapítási ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([1]B28)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120061_Type">
+      <annotation>
+         <documentation/>
+      </annotation>
+      <all>
+         <element name="Field_0C0001C0001AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedékiadó-bevallások ¦ Ügycsoport intézésére jogosult ([2]A1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0001BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedékiadó-bevallások ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([2]B1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0002AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedéki adatszolgáltatások ¦ Ügycsoport intézésére jogosult ([2]A2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0002BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedéki adatszolgáltatások ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([2]B2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0003AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>EMCS-vel kapcsolatos ügyek ¦ Ügycsoport intézésére jogosult ([2]A3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0003BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>EMCS-vel kapcsolatos ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([2]B3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0004AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Engedélyezéssel, nyilvántartásba vétellel és biztosítékkezeléssel kapcsolatos ügyek ¦ Ügycsoport intézésére jogosult ([2]A4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0004BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Engedélyezéssel, nyilvántartásba vétellel és biztosítékkezeléssel kapcsolatos ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([2]B4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0005AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedéki bejelentések ¦ Ügycsoport intézésére jogosult ([2]A5)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0005BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedéki bejelentések ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([2]B5)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0006AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedéki kérelmek, egyéb bejelentések, nyilatkozatok ¦ Ügycsoport intézésére jogosult ([2]A6)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0006BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedéki kérelmek, egyéb bejelentések, nyilatkozatok ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([2]B6)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0007AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedéki törvény szerinti jövedéki ügyhöz kapcsolódó ellenőrzési ügyek ¦ Ügycsoport intézésére jogosult ([2]A7)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0007BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedéki törvény szerinti jövedéki ügyhöz kapcsolódó ellenőrzési ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([2]B7)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0008AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Zárjeggyel, hivatalos zárral kapcsolatos ügyek ¦ Ügycsoport intézésére jogosult ([2]A8)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0008BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Zárjeggyel, hivatalos zárral kapcsolatos ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([2]B8)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0009AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Bioüzemanyagok közlekedési célú felhasználásával kapcsolatos ügyek ¦ Ügycsoport intézésére jogosult ([2]A9)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0C0001C0009BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Bioüzemanyagok közlekedési célú felhasználásával kapcsolatos ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([2]B9)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120065_Type">
+      <annotation>
+         <documentation>Valamennyi alapeljárás közvetett vámjogi képviselőként</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0D0001C0002AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ügycsoport intézésére jogosult ([3]A2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0002BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B2)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120066_Type">
+      <annotation>
+         <documentation>Egyes alapeljárások közvetett vámjogi képviselőként</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0D0001C0003AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Szabad forgalomba bocsátás ¦ Ügycsoport intézésére jogosult ([3]A3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0003BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Szabad forgalomba bocsátás ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0004AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Újrabehozatal ¦ Ügycsoport intézésére jogosult ([3]A4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0004BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Újrabehozatal ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0005AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Végleges kivitel ¦ Ügycsoport intézésére jogosult ([3]A5)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0005BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Végleges kivitel ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B5)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0006AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ideiglenes kivitel ¦ Ügycsoport intézésére jogosult ([3]A6)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0006BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ideiglenes kivitel ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B6)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0007AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Újrakivitel ¦ Ügycsoport intézésére jogosult ([3]A7)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0007BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Újrakivitel ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B7)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0008AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Árutovábbítás ¦ Ügycsoport intézésére jogosult ([3]A8)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0008BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Árutovábbítás ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B8)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120067_Type">
+      <annotation>
+         <documentation>Valamennyi alapeljárás közvetlen vámjogi képviselőként</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0D0001C0009AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ügycsoport intézésére jogosult ([3]A9)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0009BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B9)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120068_Type">
+      <annotation>
+         <documentation>Egyes alapeljárások közvetlen vámjogi képviselőként</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0D0001C0010AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Szabad forgalomba bocsátás ¦ Ügycsoport intézésére jogosult ([3]A10)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0010BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Szabad forgalomba bocsátás ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B10)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0011AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ideiglenes behozatal ¦ Ügycsoport intézésére jogosult ([3]A11)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0011BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ideiglenes behozatal ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B11)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0012AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Újrabehozatal ¦ Ügycsoport intézésére jogosult ([3]A12)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0012BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Újrabehozatal ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B12)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0013AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Aktív feldolgozás ¦ Ügycsoport intézésére jogosult ([3]A13)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0013BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Aktív feldolgozás ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B13)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0014AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Végleges kivitel ¦ Ügycsoport intézésére jogosult ([3]A14)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0014BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Végleges kivitel ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B14)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0015AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ideiglenes kivitel ¦ Ügycsoport intézésére jogosult ([3]A15)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0015BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ideiglenes kivitel ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B15)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0016AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Újrakivitel ¦ Ügycsoport intézésére jogosult ([3]A16)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0016BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Újrakivitel ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B16)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0017AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Passzív feldolgozás ¦ Ügycsoport intézésére jogosult ([3]A17)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0017BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Passzív feldolgozás ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B17)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0018AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Vámraktározás ¦ Ügycsoport intézésére jogosult ([3]A18)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0018BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Vámraktározás ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B18)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0019AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Meghatározott célú felhasználás ¦ Ügycsoport intézésére jogosult ([3]A19)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0019BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Meghatározott célú felhasználás ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B19)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0020AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Árutovábbítás ¦ Ügycsoport intézésére jogosult ([3]A20)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0020BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Árutovábbítás ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B20)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120064_Type">
+      <annotation>
+         <documentation>Egyéb vámügyek</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0D0001C0001AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Utólagos jellegű intézkedés vámügyben ¦ Ügycsoport intézésére jogosult ([3]A1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0001BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Utólagos jellegű intézkedés vámügyben ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0021AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Vámigazgatási engedélyezések, kivéve vámszabad terület ¦ Ügycsoport intézésére jogosult ([3]A21)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0021BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Vámigazgatási engedélyezések, kivéve vámszabad terület ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B21)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0022AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Vámszabad terület engedélyezése ¦ Ügycsoport intézésére jogosult ([3]A22)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0022BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Vámszabad terület engedélyezése ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B22)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0023AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Vámügyben jogorvoslat ¦ Ügycsoport intézésére jogosult ([3]A23)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C0023BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Vámügyben jogorvoslat ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B23)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C50008A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Áruk uniós vámjogi státuszáról szóló igazolás (T2L vagy T2L/F) kiadása ¦ Ügycsoport intézésére jogosult ([3]A24)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0D0001C50009A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Áruk uniós vámjogi státuszáról szóló igazolás (T2L vagy T2L/F) kiadása ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([3]B24)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120074_Type">
+      <annotation>
+         <documentation/>
+      </annotation>
+      <all>
+         <element name="Field_0E0001C0001AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fizetési kedvezményi ügyek ¦ Ügycsoport intézésére jogosult ([4]A1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0E0001C0001BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fizetési kedvezményi ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([4]B1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0E0001C0002AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Végrehajtási eljárás (meghatározott cselekmény végrehajtása nélkül) ¦ Ügycsoport intézésére jogosult ([4]A2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0E0001C0002BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Végrehajtási eljárás (meghatározott cselekmény végrehajtása nélkül) ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([4]B2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0E0001C0003AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Meghatározott cselekmény végrehajtása ¦ Ügycsoport intézésére jogosult ([4]A3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0E0001C0003BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Meghatározott cselekmény végrehajtása ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([4]B3)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120078_Type">
+      <annotation>
+         <documentation/>
+      </annotation>
+      <all>
+         <element name="Field_0F0001C0001AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi ügyek ¦ Ügycsoport intézésére jogosult ([5]A1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C0001BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([5]B1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C0002AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Hulladékgazdálkodási ügyek ¦ Ügycsoport intézésére jogosult ([5]A2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C0002BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Hulladékgazdálkodási ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([5]B2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C0003AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Egyéni vállalkozói nyilvántartással kapcsolatos ügyek (kivéve adóügyek) ¦ Ügycsoport intézésére jogosult ([5]A3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C0003BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Egyéni vállalkozói nyilvántartással kapcsolatos ügyek (kivéve adóügyek) ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([5]B3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C0004AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Nyugta/számla nyomdai előállításához szükséges sorszámigénylés; valamint adattörlő kód igénylése és a kapcsolódó adatszolgáltatás ¦ Ügycsoport intézésére jogosult ([5]A4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C0004BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Nyugta/számla nyomdai előállításához szükséges sorszámigénylés; valamint adattörlő kód igénylése és a kapcsolódó adatszolgáltatás ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([5]B4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C0005AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>EMGA utólagos ellenőrzéssel kapcsolatos ügyek ¦ Ügycsoport intézésére jogosult ([5]A5)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C0005BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>EMGA utólagos ellenőrzéssel kapcsolatos ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([5]B5)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C0006AA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedelemletiltással kapcsolatos ügyintézés ¦ Ügycsoport intézésére jogosult ([5]A6)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C0006BA"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jövedelemletiltással kapcsolatos ügyintézés ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([5]B6)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C50004A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Szellemi tulajdon védelméhez kapcsolódó intézkedések ¦ Ügycsoport intézésére jogosult ([5]A7)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C50005A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Szellemi tulajdon védelméhez kapcsolódó intézkedések ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([5]B7)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C50012A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Üzemanyagtöltő állomáson forgalmazott folyékony motorhajtóanyagokkal kapcsolatos piacfelügyeleti eljárás ¦ Ügycsoport intézésére jogosult ([5]A8)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C50013A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Üzemanyagtöltő állomáson forgalmazott folyékony motorhajtóanyagokkal kapcsolatos piacfelügyeleti eljárás ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([5]B8)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C50016A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Pénzmosás és terrorizmusfinanszírozás elleni küzdelem céljából tett bejelentések ¦ Ügycsoport intézésére jogosult ([5]A9)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C50017A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Pénzmosás és terrorizmusfinanszírozás elleni küzdelem céljából tett bejelentések ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([5]B9)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C50018A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Pénzügyi és vagyoni korlátozó intézkedéssel érintett ügyek ¦ Ügycsoport intézésére jogosult ([5]A10)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0F0001C50019A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Pénzügyi és vagyoni korlátozó intézkedéssel érintett ügyek ¦ Több jogosult közül az iratátvételre elsődlegesen kijelölt ([5]B10)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_UJEGYKE_120086_Type">
+      <annotation>
+         <documentation>Együttes képviselő</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0GXXXXC001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Első együttes képviselő adatai ¦ Neve (6_J_1_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXC002A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Első együttes képviselő adatai ¦ Adóazonosító jele (6_J_2_adoazonosito)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXC005A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Első együttes képviselő adatai ¦ Képviselet elsődleges jogcíme ¦ Kód (6_J_3_jogcim_kod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="2"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXC004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ (6_J_3_jogi_jogcim_kod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="1"/>
+                  <pattern value="[A-Z]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXC003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ (6_J_3_torvenyes_jogcim_kod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="1"/>
+                  <pattern value="[A-Z]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXC006A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ Első együttes képviselő adatai ¦ Képviselet elsődleges jogcíme ¦ Megnevezés (6_J_3_jogcim_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXC007A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Első együttes képviselő adatai ¦ Képviselet elsődleges jogcíme ¦ Nyilvántartási szám (6_J_3_jogcim_nyilvan_sz)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXC008A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Első együttes képviselő adatai ¦ Képviselet másodlagos jogcíme ¦ Kód (6_J_4_jogcim_kod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="2"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXC009A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ Első együttes képviselő adatai ¦ Képviselet másodlagos jogcíme ¦ Megnevezés (6_J_4_jogcim_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXC010A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Első együttes képviselő adatai ¦ Képviselet másodlagos jogcíme ¦ Nyilvántartási szám (6_J_4_jogcim_nyilvan_sz)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXC011A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Első együttes képviselő adatai ¦ Szervezet ¦ Elnevezése (6_J_5_szervezet_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXC012A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Első együttes képviselő adatai ¦ Szervezet ¦ Adószáma (6_J_6_szervezet_ados)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXD001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Második együttes képviselő adatai ¦ Neve (6_K_1_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXD002A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Második együttes képviselő adatai ¦ Adóazonosító jele (6_K_2_adoazonosito)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXD005A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Második együttes képviselő adatai ¦ Képviselet elsődleges jogcíme ¦ Kód (6_K_3_jogcim_kod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="2"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXD004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ (6_K_3_jogi_jogcim_kod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="1"/>
+                  <pattern value="[A-Z]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXD003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ (6_K_3_torvenyes_jogcim_kod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="1"/>
+                  <pattern value="[A-Z]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXD006A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ Második együttes képviselő adatai ¦ Képviselet elsődleges jogcíme ¦ Megnevezés (6_K_3_jogcim_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXD007A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Második együttes képviselő adatai ¦ Képviselet elsődleges jogcíme ¦ Nyilvántartási szám (6_K_3_jogcim_nyilvan_sz)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXD008A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Második együttes képviselő adatai ¦ Képviselet másodlagos jogcíme ¦ Kód (6_K_4_jogcim_kod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="2"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXD009A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ Második együttes képviselő adatai ¦ Képviselet másodlagos jogcíme ¦ Megnevezés (6_K_4_jogcim_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXD010A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Második együttes képviselő adatai ¦ Képviselet másodlagos jogcíme ¦ Nyilvántartási szám (6_K_4_jogcim_nyilvan_sz)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXD011A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Második együttes képviselő adatai ¦ Szervezet ¦ Elnevezése (6_K_5_szervezet_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="255"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXD012A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Második együttes képviselő adatai ¦ Szervezet ¦ Adószáma (6_K_6_szervezet_ados)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0GXXXXE001A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Együttes képviselettel érintett ügycsoportok ¦ ADÓÜGYEK (kivéve egyes jövedéki ügyek) (6_adougy)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0GXXXXE002A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Együttes képviselettel érintett ügycsoportok ¦ JÖVEDÉKI ÜGYEK (6_jovedeki_ugy)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0GXXXXE003A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Együttes képviselettel érintett ügycsoportok ¦ VÁMÜGYEK (6_vamugy)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0GXXXXE004A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Együttes képviselettel érintett ügycsoportok ¦ FIZETÉSI KEDVEZMÉNYI ÉS VÉGREHAJTÁSI ÜGYEK (6_fizetesi_kedvezmeny)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+</schema>
